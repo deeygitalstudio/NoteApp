@@ -1,6 +1,6 @@
 {
-  "homepage": "http://deeygitalstudio.github.io/ReactNoteApp",
-  "name": "motes",
+  "homepage": "http://deeygitalstudio.github.io/NoteApp",
+  "name": "NoteApp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
