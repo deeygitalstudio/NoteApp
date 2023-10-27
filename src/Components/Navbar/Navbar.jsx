@@ -9,7 +9,7 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
  const Navbar = () => {
    const [userEmail, setUserEmail] = useState(null);
-   const [userName, setUserName] = useState(null);
+
   const location = useLocation();
   const showButtons = location.pathname === '/';
   const renderSearchInput = location.pathname !== '/' && location.pathname !== '/Signup' && location.pathname !== '/Login';
@@ -20,12 +20,11 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
    onAuthStateChanged(auth, (user) => {
     if (user) {
 
-    const userName = user.displayName; // Get the user's name
     const userEmail = user.email; // Get the user's name
-    console.log(userEmail, userName);
+   
     
     setUserEmail(userEmail);
-    setUserName(userName);
+
     } else {
       // User is signed out
     }
