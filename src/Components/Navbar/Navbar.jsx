@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import firebase from '../Firebase'
 import './Navbar.css';
 import notesImage from '../Assest/notes.png';
@@ -11,7 +11,7 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
    const [userEmail, setUserEmail] = useState(null);
 
   const location = useLocation();
-  const showButtons = location.pathname === '/NoteApp';
+  const showButtons = location.pathname === '/NoteApp' && location.pathname === '/NoteApp/';
   const renderSearchInput = location.pathname !== '/NoteApp' && location.pathname !== '/Signup' && location.pathname !== '/Login' && location.pathname !== '/Features' && location.pathname !== '/Blog';
   const auth = getAuth(firebase);
   let navigate = useNavigate();
@@ -29,6 +29,22 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
       // User is signed out
     }
   });
+
+   const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => unsubscribe(); // Clean up the subscription on component unmount
+  }, []);
 
     const handleSignOut = () => {
     const auth = getAuth(); // Get the authentication instance
@@ -78,7 +94,11 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
         <div className='d-flex justify-content-between  mx-1'>
    
 <button type="button" className="btn btn-primary mx-4" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover"> {userEmail} <i className='fa fa-user' style={{ cursor: "pointer" }}></i></button> 
-<button type="button" className="btn btn-outline-primary position-relative" onClick={handleSignOut}>Signout</button>
+ {user && (
+        <button type="button" className="btn btn-outline-primary position-relative" onClick={handleSignOut}>
+          Sign Out
+        </button>
+      )}
 
  
         
