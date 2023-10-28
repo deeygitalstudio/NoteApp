@@ -1,0 +1,29 @@
+.dee{
+  color: #0d6efd; 
+}
+
+
+.feat .row{
+  display: flex;
+  align-items: center;
+}
+
+.feat h1{
+    color: rgb(73, 73, 73);
+}
+
+  @media screen and (max-width: 600px){
+   .container .feat h1{
+    font-size: 30px;
+    font-weight: 650;
+    
+
+  }
+
+  .feat{
+    text-align: center;
+    padding-top: 50px;
+  }
+
+
+  }

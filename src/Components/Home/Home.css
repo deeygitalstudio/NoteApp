@@ -203,6 +203,10 @@ section {
 
   }
 
+  .contt{
+    padding-top: 50px;
+  }
+
   .container .imt .btn{
     width: 100%!important;
     margin-top: 10px;
