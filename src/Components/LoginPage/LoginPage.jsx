@@ -63,7 +63,7 @@ import {useNavigate} from 'react-router-dom'
                 <input type="password" value={password} onChange={handlePasswordChange} className="form-control" id="password" placeholder="password" />
               </div>
 
-     <p class="text-center">Don't have an account <span><a href="./Signup">Sign up</a></span></p>
+     <p class="text-center">Don't have an account <span><a href="/Signup">Sign up</a></span></p>
 
              
     
