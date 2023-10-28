@@ -59,11 +59,11 @@ import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
       <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
         <li className="nav-link"><Link to="/NoteApp" className="">Home</Link></li>
         <li className="nav-link">
-          <a href="/Features">Features</a>
+          <Link to="/Features">Features</Link>
         </li>
     
         <li className="nav-link">
-          <a href="/Blog">Blog</a>
+          <Link to="/Blog">Blog</Link>
         </li>
       </ul>
       <form className="d-flex" mx-auto role="search">

@@ -4,6 +4,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import './LoginPage.css'
 import sign2 from '../Assest/sign2.jpg'
 import {useNavigate} from 'react-router-dom'
+import { Link} from 'react-router-dom';
 
  const Login = () => {
   const [email, setEmail] = useState('');
@@ -63,7 +64,7 @@ import {useNavigate} from 'react-router-dom'
                 <input type="password" value={password} onChange={handlePasswordChange} className="form-control" id="password" placeholder="password" />
               </div>
 
-     <p class="text-center">Don't have an account <span><a href="/Signup">Sign up</a></span></p>
+     <p class="text-center">Don't have an account <span><Link to="/Signup">Sign up</Link></span></p>
 
              
     

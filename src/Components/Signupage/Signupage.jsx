@@ -5,6 +5,7 @@ import { getDatabase, ref, set } from 'firebase/database';
 import './Sign.css';
 import {useNavigate} from 'react-router-dom'
 import sig from '../Assest/sig.jpg'
+import { Link} from 'react-router-dom';
 
 
 const Signup = () => {
@@ -69,7 +70,7 @@ const Signup = () => {
                 </div>
 
 
-     <p class="text-center">Already have an account <span><a href="/Login">Login</a></span></p>
+     <p class="text-center">Already have an account <span><Link href="/Login">Login</Link></span></p>
 
              
 
